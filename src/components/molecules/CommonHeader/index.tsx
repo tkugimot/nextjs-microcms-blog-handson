@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import {
   Box,
@@ -7,35 +8,38 @@ import {
   Heading,
   HStack,
   useColorMode,
-  useColorModeValue
+  useColorModeValue,
 } from '@chakra-ui/react'
-import {MoonIcon, SunIcon} from "@chakra-ui/icons";
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 export default function CommonHeader() {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
-    /* 変更　ライトモードでgray.100,ダークモードでgray.900とする。 */
     <Box bg={useColorModeValue('blue.100', 'blue.900')} px={4}>
-      <Container maxW='container.lg'>
-        <Flex as='header' py='4' justifyContent='space-between' alignItems='center'>
-          <Link href='/' passHref>
-            {/* 変更 ライトモードでgray.600、ダークモードでwhiteとする */}
+      <Container maxW="container.lg">
+        <Flex
+          as="header"
+          py="4"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Link href="/" passHref>
             <Heading
-              as='h1'
-              fontSize='2xl'
-              cursor='pointer'
+              as="h1"
+              fontSize="2xl"
+              cursor="pointer"
               color={useColorModeValue('gray.600', 'white')}
             >
               Zubora Code
             </Heading>
           </Link>
-          <HStack spacing='12px'>
+          <HStack spacing="12px">
             <Button
               color={useColorModeValue('black', 'white')}
-              colorScheme='blue.100'
+              colorScheme="blue.100"
               px={'0'}
-              size='lg'
+              size="lg"
               onClick={toggleColorMode}
             >
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
