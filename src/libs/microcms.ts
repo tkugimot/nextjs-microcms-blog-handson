@@ -51,7 +51,7 @@ export const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY,
 })
 
-// ブログ一覧を取得
+// Get all articles
 export const getList = async (queries?: MicroCMSQueries) => {
   const listData = await client
     .getList<Blog>({
@@ -62,7 +62,7 @@ export const getList = async (queries?: MicroCMSQueries) => {
   return listData
 }
 
-// ブログの詳細を取得
+// Get each article
 export const getDetail = async (
   contentId: string,
   queries?: MicroCMSQueries
@@ -78,7 +78,7 @@ export const getDetail = async (
   return detailData
 }
 
-// タグの一覧を取得
+// Get all tags
 export const getTagList = async (queries?: MicroCMSQueries) => {
   const listData = await client
     .getList<Tag>({
@@ -90,7 +90,7 @@ export const getTagList = async (queries?: MicroCMSQueries) => {
   return listData
 }
 
-// タグの詳細を取得
+// Get each tag
 export const getTag = async (contentId: string, queries?: MicroCMSQueries) => {
   const detailData = await client
     .getListDetail<Tag>({
