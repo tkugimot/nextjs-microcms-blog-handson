@@ -1,5 +1,5 @@
 'use client'
-import { Container } from '@chakra-ui/react'
+import { Container, useColorMode } from '@chakra-ui/react'
 import ArticleList from '@/components/organisms/ArticleList'
 import { Article } from '@/libs/microcms'
 
@@ -9,7 +9,7 @@ type Props = {
 
 export default function HomePage({ articles }: Props) {
   return (
-    <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
+    <Container maxW="container.lg" paddingY={16}>
       <ArticleList articles={articles} />
     </Container>
   )
