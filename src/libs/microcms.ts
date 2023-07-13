@@ -30,8 +30,8 @@ export type Blog = {
   description_ja: string
   description_en?: string
   tags?: Tag[]
-  main_ja: MainJa
-  main_en: MainEn
+  main_ja: MainJa[]
+  main_en: MainEn[]
   thumbnail?: MicroCMSImage
 }
 

@@ -1,3 +1,4 @@
+'use client'
 import { type Article } from '@/libs/microcms'
 import styles from './index.module.css'
 import { formatRichText } from '@/libs/formatRighTextUtil'
@@ -33,14 +34,19 @@ export default function ArticlePage({ data }: Props) {
           height={data.thumbnail?.height}
         />
       </picture>
-      <div
-        className={styles.content}
-        dangerouslySetInnerHTML={{
-          __html: `${formatRichText(
-            data.main_ja.content_ja ? data.main_ja.content_ja : ''
-          )}`,
-        }}
-      />
+      <div>
+        {data.main_ja.map((item) => (
+          <div
+            key={item.fieldId}
+            className={styles.content}
+            dangerouslySetInnerHTML={{
+              __html: `${formatRichText(
+                item.content_ja ? item.content_ja : ''
+              )}`,
+            }}
+          />
+        ))}
+      </div>
     </main>
   )
 }
