@@ -1,21 +1,23 @@
 const { load } = require('cheerio')
-import hljs from 'highlight.js'
+import highlight from 'highlight.js'
+import 'highlight.js/styles/night-owl.css'
 
 export const formatRichText = (richText: string) => {
   const $ = load(richText)
-  const highlight = (text: string, lang?: string) => {
-    if (!lang) return hljs.highlightAuto(text)
+
+  const highlighted = (text: string, lang?: string) => {
+    if (!lang) return highlight.highlightAuto(text)
     try {
-      return hljs.highlight(text, {
+      return highlight.highlight(text, {
         language: lang?.replace(/^language-/, '') || '',
       })
     } catch (e) {
-      return hljs.highlightAuto(text)
+      return highlight.highlightAuto(text)
     }
   }
   $('pre code').each((_: number, elm: Element) => {
     const lang = $(elm).attr('class')
-    const res = highlight($(elm).text(), lang)
+    const res = highlighted($(elm).text(), lang)
     $(elm).html(res.value)
   })
   return $.html()

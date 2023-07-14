@@ -95,10 +95,12 @@
 }
 
 .content > pre {
+    color: white;
     overflow-x: auto;
 }
 
 .content pre > code {
+    color: white;
     background-color: var(--color-bg-code);
     display: block;
     overflow-x: auto;
@@ -106,8 +108,9 @@
 }
 
 .content div[data-filename]::before {
+    color: white;
     display: inline-block;
-    background-color: var(--color-bg-sub);
+    background-color: var(--color-bg-dark);
     content: attr(data-filename);
     margin: 1em 0 0;
     font-family: menlo, inconsolata, monospace;
@@ -173,12 +176,15 @@
 }
 
 .content > table th {
-    background-color: var(--color-bg-sub);
+    color: white;
+    background-color: var(--color-bg-dark);
     text-align: left;
     padding: 1rem;
 }
 
 .content > table td {
+    color: white;
+    background-color: var(--color-bg-dark);
     text-align: left;
     padding: 1rem;
 }

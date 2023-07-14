@@ -1,3 +1,4 @@
+@use "sass:meta";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +11,8 @@
   --color-text-sub: #999;
   --color-bg-main: #fff;
   --color-bg-sub: #f3f3f3;
-  --color-bg-code: #fafafa;
+  --color-bg-dark: #011627;
+  --color-bg-code: #011627;
   --color-border-dark: #ccc;
   --color-border: #ddd;
   --color-border-light: #f3f3f3;
@@ -65,3 +67,10 @@ ul {
   }
 }
 
+
+html[data-theme="light"] {
+  @include meta.load-css("highlight.js/styles/a11y-light");
+}
+html[data-theme="dark"] {
+  @include meta.load-css("highlight.js/styles/a11y-dark");
+}
