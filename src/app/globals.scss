@@ -1,4 +1,3 @@
-@use "sass:meta";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,12 +64,4 @@ ul {
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-
-html[data-theme="light"] {
-  @include meta.load-css("highlight.js/styles/a11y-light");
-}
-html[data-theme="dark"] {
-  @include meta.load-css("highlight.js/styles/a11y-dark");
 }
