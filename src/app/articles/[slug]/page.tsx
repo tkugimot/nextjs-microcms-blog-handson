@@ -35,5 +35,7 @@ export default async function Page({ params, searchParams }: Props) {
     draftKey: searchParams.dk,
   })
 
+  console.log(data)
+
   return <ArticlePage data={data} />
 }
