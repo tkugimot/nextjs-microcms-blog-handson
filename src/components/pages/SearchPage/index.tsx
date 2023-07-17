@@ -7,7 +7,7 @@ type Props = {
   articles?: Article[]
 }
 
-export default function HomePage({ articles }: Props) {
+export default function SearchPage({ articles }: Props) {
   return (
     <Container maxW="container.lg" paddingY={8}>
       <ArticleList articles={articles} />
