@@ -34,8 +34,5 @@ export default async function Page({ params, searchParams }: Props) {
   const data = await getDetail(params.slug, {
     draftKey: searchParams.dk,
   })
-
-  console.log(data)
-
   return <ArticlePage data={data} />
 }
