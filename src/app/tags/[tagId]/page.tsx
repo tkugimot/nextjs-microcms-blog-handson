@@ -14,7 +14,5 @@ export default async function Page({ params }: Props) {
     limit: NUM_OF_PAGES_LIMIT,
     filters: `tags[contains]${tagId}`,
   })
-  // const tag = await getTag(tagId)
-  console.log(data)
   return <TagPage articles={data.contents} />
 }
