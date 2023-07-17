@@ -1,5 +1,5 @@
 'use client'
-import { Container, useColorMode } from '@chakra-ui/react'
+import { Container } from '@chakra-ui/react'
 import ArticleList from '@/components/organisms/ArticleList'
 import { Article } from '@/libs/microcms'
 
