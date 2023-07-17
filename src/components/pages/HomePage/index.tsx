@@ -9,7 +9,7 @@ type Props = {
 
 export default function HomePage({ articles }: Props) {
   return (
-    <Container maxW="container.lg" paddingY={16}>
+    <Container maxW="container.lg" paddingY={8}>
       <ArticleList articles={articles} />
     </Container>
   )
