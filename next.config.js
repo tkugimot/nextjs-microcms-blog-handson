@@ -5,6 +5,10 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  images: {
+    loader: 'custom',
+    domains: ['images.microcms-assets.io'],
+  },
 }
 
 module.exports = nextConfig

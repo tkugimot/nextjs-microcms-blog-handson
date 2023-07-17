@@ -13,13 +13,25 @@ export default function ArticleListItem({ article }: Props) {
     <Box key={article.id}>
       <Link href={`/articles/${article.id}`}>
         <HStack spacing="24px">
-          <Image
-            src={article.thumbnail?.url || `/no-image.png`}
-            width={250}
-            height={125}
-            alt="No Image"
-            priority
-          />
+          {article.thumbnail ? (
+            <Image
+              loader={() => article.thumbnail?.url || ''}
+              src={article.thumbnail.url}
+              width={250}
+              height={125}
+              alt="No Image"
+              priority
+            />
+          ) : (
+            <Image
+              loader={() => '/no-image.png'}
+              src={'/no-image.png'}
+              width={250}
+              height={125}
+              alt="No Image"
+              priority
+            />
+          )}
           <VStack align={'left'}>
             <Heading
               as="h2"
