@@ -1,5 +1,6 @@
 import ArticleListItem from '@/components/molecules/ArticleListItem'
 import { Article } from '@/libs/microcms'
+import { Center, Text } from '@chakra-ui/react'
 
 type Props = {
   articles?: Article[]
@@ -10,7 +11,13 @@ export default function ArticleList({ articles }: Props) {
     return null
   }
   if (articles.length === 0) {
-    return <p>記事がありません。</p>
+    return (
+      <Center pb={8}>
+        <Text align={'center'} fontSize={'2xl'} as={'b'}>
+          Articles Not found.
+        </Text>
+      </Center>
+    )
   }
   return (
     <ul>
