@@ -5,14 +5,9 @@ import {
   Center,
   Divider,
   HStack,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  useColorMode,
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react'
-import { Search2Icon } from '@chakra-ui/icons'
 import SearchField from '@/components/molecules/SearchField'
 
 type Props = {
@@ -20,10 +15,12 @@ type Props = {
 }
 
 export default function Navigation({ tags }: Props) {
-  const { colorMode, toggleColorMode } = useColorMode()
-
   return (
-    <Center py={8} bg={useColorModeValue('white', 'gray.800')}>
+    <Center
+      py={8}
+      color={useColorModeValue('black', 'white')}
+      bg={useColorModeValue('white', 'gray.800')}
+    >
       <VStack>
         <HStack w="20%" pb={4}>
           <SearchField />
