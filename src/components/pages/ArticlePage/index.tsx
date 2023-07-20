@@ -1,9 +1,8 @@
 'use client'
 import { type Article } from '@/libs/microcms'
-import styles from './index.module.css'
-import { formatRichText } from '@/libs/formatRighTextUtil'
-import PublishedDate from '@/components/molecules/PublishedDate'
-import { Container } from '@chakra-ui/react'
+import { Container, Grid, GridItem } from '@chakra-ui/react'
+import ProfileCard from '@/components/molecules/ProfileCard/ProfileCard'
+import ArticleContent from '@/components/organisms/ArticleContent'
 
 type Props = {
   data: Article
@@ -11,45 +10,19 @@ type Props = {
 
 export default function ArticlePage({ data }: Props) {
   return (
-    <Container maxW="container.lg" paddingY={16}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>{data.title_ja}</h1>
-        <p className={styles.description}>{data.description_ja}</p>
-        <div className={styles.meta}>
-          <PublishedDate date={data.publishedAt || data.createdAt} />
-        </div>
-        <picture>
-          <source
-            type="image/webp"
-            media="(max-width: 640px)"
-            srcSet={`${data.thumbnail?.url}?fm=webp&w=414 1x, ${data.thumbnail?.url}?fm=webp&w=414&dpr=2 2x`}
-          />
-          <source
-            type="image/webp"
-            srcSet={`${data.thumbnail?.url}?fm=webp&fit=crop&w=960&h=504 1x, ${data.thumbnail?.url}?fm=webp&fit=crop&w=960&h=504&dpr=2 2x`}
-          />
-          <img
-            src={data.thumbnail?.url}
-            alt=""
-            className={styles.thumbnail}
-            width={data.thumbnail?.width}
-            height={data.thumbnail?.height}
-          />
-        </picture>
-        <div>
-          {data.main_ja.map((item) => (
-            <div
-              key={item.fieldId}
-              className={styles.content}
-              dangerouslySetInnerHTML={{
-                __html: `${formatRichText(
-                  item.content_ja ? item.content_ja : ''
-                )}`,
-              }}
-            />
-          ))}
-        </div>
-      </main>
+    <Container maxW="container.lg" paddingY={8}>
+      <Grid
+        templateRows="repeat(1, 1fr)"
+        templateColumns="repeat(10, 1fr)"
+        gap="3"
+      >
+        <GridItem rowSpan={1} colSpan={{ base: 10, md: 7 }}>
+          <ArticleContent data={data} />
+        </GridItem>
+        <GridItem rowSpan={1} colSpan={{ base: 10, md: 3 }}>
+          <ProfileCard hide_readmore={false} />
+        </GridItem>
+      </Grid>
     </Container>
   )
 }
