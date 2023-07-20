@@ -53,13 +53,15 @@ const ProfileCard = (props: Props) => {
           </Stack>
           <Stack spacing={0} align={'center'} py={8}>
             <Text style={{ whiteSpace: 'pre-line' }} color={'gray.500'}>
-              仕事では決済やメディアのWebやスマホアプリのBE開発、WebのFE開発をやっています。\nJavaとTypeScriptをよく使います。プライベートではFlutterでのアプリ開発にも挑戦中です。
+              仕事では決済やメディアのWebやスマホアプリのBE開発、WebのFE開発をやっています。
+              <br />
+              JavaとTypeScriptをよく使います。プライベートではFlutterでのアプリ開発にも挑戦中です。
             </Text>
             {props.hide_readmore ? (
               <></>
             ) : (
               <>
-                <NextLink href={`/about`}>
+                <NextLink href={`/aboutme`}>
                   <Button colorScheme="cyan" variant="outline" size="sm" my="4">
                     もっと読む
                   </Button>
