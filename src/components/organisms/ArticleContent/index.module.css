@@ -3,11 +3,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 64px;
 }
 
 .title {
     font-size: 2.4rem;
-    margin: 24px 0;
+    margin: 64px 0;
     text-align: center;
 }
 
