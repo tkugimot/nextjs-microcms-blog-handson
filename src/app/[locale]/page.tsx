@@ -9,3 +9,7 @@ export default async function Home() {
 
   return <HomePage articles={data.contents} />
 }
+
+export async function generateStaticParams() {
+  return [{ lang: 'ja' }, { lang: 'en' }]
+}

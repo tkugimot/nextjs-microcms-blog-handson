@@ -2,7 +2,7 @@ const { load } = require('cheerio')
 import highlight from 'highlight.js'
 import 'highlight.js/styles/night-owl.css'
 
-export const formatRichText = (richText: string) => {
+export const formatRichText = (richText?: string) => {
   const $ = load(richText)
 
   const highlighted = (text: string, lang?: string) => {

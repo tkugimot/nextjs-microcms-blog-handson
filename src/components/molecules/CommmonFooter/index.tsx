@@ -1,10 +1,10 @@
 'use client'
 import Link from 'next/link'
-import { Center, useColorMode, Text, useColorModeValue } from '@chakra-ui/react'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { Center, Text, useColorModeValue } from '@chakra-ui/react'
+import { useLocale } from 'use-intl'
 
 export default function CommonFooter() {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const locale = useLocale()
 
   return (
     <Center
@@ -16,7 +16,7 @@ export default function CommonFooter() {
         <Text pb={'4'}>
           &copy; {new Date().getFullYear()} Toshimitsu Kugimoto.
         </Text>
-        <Link href="/privacy_policy" passHref>
+        <Link href={'/' + locale + '/privacy_policy'} passHref>
           <Text align={'center'} fontSize={'sm'}>
             privacy policy
           </Text>

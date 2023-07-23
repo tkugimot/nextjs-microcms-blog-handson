@@ -4,12 +4,22 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PublishedDate from '../PublishedDate'
 import TagLinkList from '@/components/molecules/TagLinkList'
+import { useLocale } from 'use-intl'
 
 type Props = {
   article: Article
 }
 
 export default function ArticleListItem({ article }: Props) {
+  const locale = useLocale()
+  const pageExists =
+    (locale === 'en' && article.title_en) ||
+    (locale === 'ja' && article.title_ja)
+
+  if (!pageExists) {
+    return <></>
+  }
+
   return (
     <Box key={article.id}>
       <HStack spacing="24px">
@@ -35,7 +45,7 @@ export default function ArticleListItem({ article }: Props) {
           )}
         </Link>
         <VStack align={'left'}>
-          <Link href={`/articles/${article.id}`}>
+          <Link href={'/' + locale + '/articles/' + article.id}>
             <Heading
               as="h2"
               fontSize="2xl"
@@ -44,7 +54,7 @@ export default function ArticleListItem({ article }: Props) {
               flex={1}
               cursor="pointer"
             >
-              {article.title_ja}
+              {locale === 'en' ? article.title_en : article.title_ja}
             </Heading>
           </Link>
           <TagLinkList tags={article.tags} />

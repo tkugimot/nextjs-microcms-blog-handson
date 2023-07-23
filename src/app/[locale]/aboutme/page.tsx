@@ -5,3 +5,7 @@ export default async function AboutMeNextPage() {
   const data = await getDetail('aboutme')
   return <AboutMePage data={data} />
 }
+
+export async function generateStaticParams() {
+  return [{ lang: 'ja' }, { lang: 'en' }]
+}
