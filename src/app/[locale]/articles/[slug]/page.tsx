@@ -4,6 +4,7 @@ import ArticlePage from '@/components/pages/ArticlePage'
 
 type Props = {
   params: {
+    locale: string
     slug: string
   }
 }
@@ -12,11 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = await getDetail(params.slug)
 
   return {
-    title: data.title_ja,
-    description: data.description_ja,
+    title: params.locale === 'en' ? data.title_en : data.title_ja,
+    description:
+      params.locale === 'en' ? data.description_en : data.description_ja,
     openGraph: {
-      title: data.title_ja,
-      description: data.description_ja,
+      title: params.locale === 'en' ? data.title_en : data.title_ja,
+      description:
+        params.locale === 'en' ? data.description_en : data.description_ja,
       images: [data?.thumbnail?.url || ''],
     },
   }
