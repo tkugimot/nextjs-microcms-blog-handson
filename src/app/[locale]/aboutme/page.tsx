@@ -7,5 +7,5 @@ export default async function AboutMeNextPage() {
 }
 
 export async function generateStaticParams() {
-  return [{ lang: 'ja' }, { lang: 'ja' }]
+  return [{ lang: 'ja' }, { lang: 'en' }]
 }

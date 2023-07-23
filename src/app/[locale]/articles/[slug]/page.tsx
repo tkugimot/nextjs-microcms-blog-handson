@@ -28,5 +28,5 @@ export default async function Page({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  return [{ lang: 'ja' }, { lang: 'ja' }]
+  return [{ lang: 'ja' }, { lang: 'en' }]
 }

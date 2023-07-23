@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-import { i18n } from './i18n-config'
+import { i18n } from '../i18n-config'
 
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
@@ -9,10 +9,10 @@ import createMiddleware from 'next-intl/middleware'
 
 export default createMiddleware({
   // A list of all locales that are supported
-  locales: ['en', 'de'],
+  locales: ['ja', 'en'],
 
   // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
-  defaultLocale: 'en',
+  defaultLocale: 'ja',
 })
 
 function getLocale(request: NextRequest): string | undefined {
@@ -68,6 +68,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|.*.png|.*.jpg).*)'],
 }

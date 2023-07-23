@@ -1,6 +1,6 @@
-import './globals.scss'
+import '../globals.scss'
 import { Inter } from 'next/font/google'
-import { Providers } from './providers'
+import { Providers } from '../providers'
 import CommonHeader from '@/components/molecules/CommonHeader'
 import Main from '@/components/pages/Main'
 import CommonFooter from '@/components/molecules/CommmonFooter'
@@ -31,7 +31,6 @@ export default async function LocaleLayout({
   try {
     messages = (await import(`../../messages/${locale}.json`)).default
   } catch (error) {
-    console.log(error)
     notFound()
   }
 
@@ -40,7 +39,7 @@ export default async function LocaleLayout({
   })
 
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>

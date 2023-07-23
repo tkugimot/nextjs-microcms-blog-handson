@@ -16,10 +16,7 @@ import { TbLanguageHiragana } from 'react-icons/tb'
 import { useRouter } from 'next-intl/client'
 import { useLocale } from '@/hooks/useLocale'
 import { usePathname } from 'next-intl/client'
-
-type IntlNavigateOptions = {
-  locale?: string
-}
+import { SiAboutdotme } from 'react-icons/si'
 
 export default function CommonHeader() {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -41,7 +38,7 @@ export default function CommonHeader() {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Link href="/" passHref>
+          <Link href={'/' + locale} passHref>
             <Heading
               as="h1"
               fontSize="2xl"
@@ -69,6 +66,16 @@ export default function CommonHeader() {
               icon={<TbLanguageHiragana size={25} />}
               aria-label="Toggle language"
             ></IconButton>
+            <Link href={'/' + locale + '/aboutme'} passHref>
+              <IconButton
+                color={useColorModeValue('black', 'white')}
+                colorScheme="blue.100"
+                pr={'1'}
+                onClick={toggleLocale}
+                icon={<SiAboutdotme size={25} />}
+                aria-label="Toggle language"
+              ></IconButton>
+            </Link>
           </HStack>
         </Flex>
       </Container>
