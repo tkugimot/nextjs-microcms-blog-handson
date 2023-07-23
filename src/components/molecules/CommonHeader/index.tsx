@@ -14,14 +14,14 @@ import {
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { TbLanguageHiragana } from 'react-icons/tb'
 import { useRouter } from 'next-intl/client'
-import { useLocale } from '@/hooks/useLocale'
 import { usePathname } from 'next-intl/client'
 import { SiAboutdotme } from 'react-icons/si'
+import { useLocale } from 'use-intl'
 
 export default function CommonHeader() {
   const { colorMode, toggleColorMode } = useColorMode()
   const router = useRouter()
-  const { locale } = useLocale()
+  const locale = useLocale()
   const pathname = usePathname()
   const nextLocale = locale === 'en' ? 'ja' : 'en'
 

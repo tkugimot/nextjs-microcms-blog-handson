@@ -4,6 +4,7 @@ import { formatRichText } from '@/libs/formatRighTextUtil'
 import PublishedDate from '@/components/molecules/PublishedDate'
 import { Center, Text } from '@chakra-ui/react'
 import { useLocale, useTranslations } from 'use-intl'
+import SnsShareButtons from '@/components/molecules/SnsShareButtons/SnsShareButtons'
 
 type Props = {
   data: Article
@@ -54,6 +55,7 @@ export default function ArticleContent({ data }: Props) {
             </picture>
           )}
           <div>
+            <SnsShareButtons article={data} />
             {locale === 'en'
               ? data.main_en.map((item) => (
                   <div
@@ -73,6 +75,7 @@ export default function ArticleContent({ data }: Props) {
                     }}
                   />
                 ))}
+            <SnsShareButtons article={data} />
           </div>
         </main>
       )}
