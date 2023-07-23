@@ -33,11 +33,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
+    "react-share": "^4.4.1",
     "react-social-icons": "^5.15.0",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@types/gtag.js": "^0.0.12",
     "@types/negotiator": "^0.6.1",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.8",

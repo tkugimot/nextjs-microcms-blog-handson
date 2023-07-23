@@ -16,12 +16,12 @@ type Props = {
 export default function Navigation({ tags }: Props) {
   return (
     <Center
-      py={8}
+      py={4}
       color={useColorModeValue('black', 'white')}
       bg={useColorModeValue('white', 'gray.800')}
     >
       <VStack>
-        <HStack spacing={4} overflowX="auto" width="50%">
+        <HStack paddingX={4}>
           <TagLinkList tags={tags} />
         </HStack>
         <Divider />
