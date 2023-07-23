@@ -1,5 +1,5 @@
 import { Tag } from '@/libs/microcms'
-import { HStack } from '@chakra-ui/react'
+import { Wrap, WrapItem } from '@chakra-ui/react'
 import TagLink from '@/components/molecules/TagLink'
 
 type Props = {
@@ -8,10 +8,12 @@ type Props = {
 
 export default function TagLinkList({ tags }: Props) {
   return (
-    <HStack spacing={4} overflowX="auto" width="100%">
+    <Wrap spacing={2}>
       {tags?.map((eachTag) => (
-        <TagLink key={eachTag.id} tag={eachTag} />
+        <WrapItem>
+          <TagLink key={eachTag.id} tag={eachTag} />
+        </WrapItem>
       ))}
-    </HStack>
+    </Wrap>
   )
 }
