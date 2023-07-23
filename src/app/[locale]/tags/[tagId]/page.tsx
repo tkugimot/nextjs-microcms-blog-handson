@@ -16,3 +16,7 @@ export default async function Page({ params }: Props) {
   })
   return <TagPage articles={data.contents} />
 }
+
+export async function generateStaticParams() {
+  return [{ lang: 'ja' }, { lang: 'ja' }]
+}

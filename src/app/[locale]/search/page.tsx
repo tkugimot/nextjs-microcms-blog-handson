@@ -18,3 +18,7 @@ export default async function Page({ searchParams }: Props) {
     </>
   )
 }
+
+export async function generateStaticParams() {
+  return [{ lang: 'ja' }, { lang: 'ja' }]
+}

@@ -1,11 +1,6 @@
-import HomePage from '@/components/pages/HomePage'
-import { NUM_OF_PAGES_LIMIT } from '@/constants'
-import { getList } from '@/libs/microcms'
+import { redirect } from 'next/navigation'
 
-export default async function Home() {
-  const data = await getList({
-    limit: NUM_OF_PAGES_LIMIT,
-  })
-
-  return <HomePage articles={data.contents} />
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect('/en')
 }

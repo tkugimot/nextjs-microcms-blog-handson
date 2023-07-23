@@ -36,3 +36,7 @@ export default async function Page({ params, searchParams }: Props) {
   })
   return <ArticlePage data={data} />
 }
+
+export async function generateStaticParams() {
+  return [{ lang: 'ja' }, { lang: 'ja' }]
+}
