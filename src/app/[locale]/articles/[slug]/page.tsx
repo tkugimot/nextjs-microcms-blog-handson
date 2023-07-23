@@ -6,18 +6,10 @@ type Props = {
   params: {
     slug: string
   }
-  searchParams: {
-    dk: string
-  }
 }
 
-export async function generateMetadata({
-  params,
-  searchParams,
-}: Props): Promise<Metadata> {
-  const data = await getDetail(params.slug, {
-    draftKey: searchParams.dk,
-  })
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const data = await getDetail(params.slug)
 
   return {
     title: data.title_ja,
@@ -30,10 +22,8 @@ export async function generateMetadata({
   }
 }
 
-export default async function Page({ params, searchParams }: Props) {
-  const data = await getDetail(params.slug, {
-    draftKey: searchParams.dk,
-  })
+export default async function Page({ params }: Props) {
+  const data = await getDetail(params.slug)
   return <ArticlePage data={data} />
 }
 

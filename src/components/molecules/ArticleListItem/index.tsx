@@ -45,7 +45,7 @@ export default function ArticleListItem({ article }: Props) {
           )}
         </Link>
         <VStack align={'left'}>
-          <Link href={locale + '/articles/' + article.id}>
+          <Link href={'/' + locale + '/articles/' + article.id}>
             <Heading
               as="h2"
               fontSize="2xl"
