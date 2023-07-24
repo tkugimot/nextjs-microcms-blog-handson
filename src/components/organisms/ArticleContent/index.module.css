@@ -46,13 +46,14 @@
 }
 
 .thumbnail {
-    width: 960px;
+    width: 320px;
     height: auto;
     margin-bottom: 64px;
 }
 
 .content {
     width: 720px;
+    color: black;
 }
 
 .content *:first-child {

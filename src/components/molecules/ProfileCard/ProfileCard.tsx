@@ -63,7 +63,7 @@ const ProfileCard = (props: Props) => {
               <></>
             ) : (
               <>
-                <NextLink href={locale + '/aboutme'}>
+                <NextLink href={'/' + locale + '/aboutme'}>
                   <Button colorScheme="cyan" variant="outline" size="sm" my="4">
                     {t('readMore')}
                   </Button>
