@@ -31,7 +31,8 @@ export default function ArticleListItem({ article }: Props) {
               width={250}
               height={125}
               alt="No Image"
-              priority
+              unoptimized={true}
+              style={{ width: '250px', height: 'auto' }}
             />
           ) : (
             <Image
@@ -40,7 +41,8 @@ export default function ArticleListItem({ article }: Props) {
               width={250}
               height={125}
               alt="No Image"
-              priority
+              unoptimized={true}
+              style={{ width: '250px', height: 'auto' }}
             />
           )}
         </Link>
