@@ -1,19 +1,21 @@
 import { formatDate } from '@/libs/dateutil'
-import { Box } from '@chakra-ui/react'
-import Image from 'next/image'
-import { TimeIcon } from '@chakra-ui/icons'
+import { Box, Text } from '@chakra-ui/react'
 
 type Props = {
-  date?: string
+  publishedAt?: string
+  revisedAt?: string
 }
 
-export default function PublishedDate({ date }: Props) {
-  const formattedDate = formatDate(date)
+export default function PublishedDate({ publishedAt, revisedAt }: Props) {
+  const formattedPublishedAt = formatDate(publishedAt)
+  const formattedRevisedAt = formatDate(revisedAt)
 
   return (
-    <Box display="flex" gap={2}>
-      <TimeIcon mt={1} />
-      {formattedDate}
+    <Box>
+      <Text>
+        Published: {formattedPublishedAt} <br></br>
+        Revised: {formattedRevisedAt}
+      </Text>
     </Box>
   )
 }

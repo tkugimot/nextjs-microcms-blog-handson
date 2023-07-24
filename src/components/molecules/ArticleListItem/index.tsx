@@ -58,9 +58,10 @@ export default function ArticleListItem({ article }: Props) {
             </Heading>
           </Link>
           <TagLinkList tags={article.tags} />
-          <HStack>
-            <PublishedDate date={article.publishedAt} />
-          </HStack>
+          <PublishedDate
+            publishedAt={article.publishedAt}
+            revisedAt={article.revisedAt}
+          />
         </VStack>
       </HStack>
       <Stack mt="10" mb="10" borderBottom="1px" borderColor="gray.300" />
