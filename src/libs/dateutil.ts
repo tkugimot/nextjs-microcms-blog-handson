@@ -6,7 +6,7 @@ export const formatDate = (date?: string) => {
   if (date) {
     dayjs.extend(utc)
     dayjs.extend(timezone)
-    return dayjs.utc(date).tz('Asia/Tokyo').format('d MMMM, YYYY')
+    return dayjs.utc(date).tz('Asia/Tokyo').format('D MMMM, YYYY')
   }
   return 'unknown date'
 }

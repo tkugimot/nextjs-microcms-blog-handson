@@ -32,7 +32,10 @@ export default function ArticleContent({ data }: Props) {
             {locale === 'en' ? data.description_en : data.description_ja}
           </p>
           <div className={styles.meta}>
-            <PublishedDate date={data.publishedAt || data.createdAt} />
+            <PublishedDate
+              publishedAt={data.publishedAt}
+              revisedAt={data.revisedAt}
+            />
           </div>
           {data.thumbnail && (
             <picture>
