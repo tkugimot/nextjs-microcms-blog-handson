@@ -10,8 +10,8 @@ export default function TagLinkList({ tags }: Props) {
   return (
     <Wrap spacing={2}>
       {tags?.map((eachTag) => (
-        <WrapItem>
-          <TagLink key={eachTag.id} tag={eachTag} />
+        <WrapItem key={eachTag.id}>
+          <TagLink tag={eachTag} />
         </WrapItem>
       ))}
     </Wrap>
