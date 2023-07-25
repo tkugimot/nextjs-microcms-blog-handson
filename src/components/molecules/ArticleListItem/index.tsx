@@ -23,7 +23,7 @@ export default function ArticleListItem({ article }: Props) {
   return (
     <Box key={article.id}>
       <HStack spacing="24px">
-        <Link href={`/articles/${article.id}`}>
+        <Link href={`${locale}/articles/${article.id}`}>
           {article.thumbnail ? (
             <Image
               src={`${article.thumbnail.url}?fm=webp&w=414 1x`}
