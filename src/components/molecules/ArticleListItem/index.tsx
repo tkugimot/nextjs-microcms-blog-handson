@@ -26,23 +26,20 @@ export default function ArticleListItem({ article }: Props) {
         <Link href={`/articles/${article.id}`}>
           {article.thumbnail ? (
             <Image
-              loader={() => `${article.thumbnail?.url}` || ''}
-              src={article.thumbnail.url}
+              src={`${article.thumbnail.url}?fm=webp&w=414 1x`}
+              alt="No Image"
               width={250}
               height={125}
-              alt="No Image"
               unoptimized={true}
-              style={{ width: '250px', height: 'auto' }}
+              style={{ maxWidth: '200px' }}
             />
           ) : (
             <Image
-              loader={() => '/no-image.png'}
               src={'/no-image.png'}
-              width={250}
-              height={125}
+              width={200}
+              height={100}
               alt="No Image"
               unoptimized={true}
-              style={{ width: '250px', height: 'auto' }}
             />
           )}
         </Link>
