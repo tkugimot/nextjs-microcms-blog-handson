@@ -81,6 +81,3 @@ export default function ArticleContent({ data }: Props) {
     </>
   )
 }
-
-// TODO: あとは全ページにpathを追加してあげる
-// で toggle してあげる。toggleは useLocale 使って簡単(kugi-blogと全く一緒に実装できるはず)
