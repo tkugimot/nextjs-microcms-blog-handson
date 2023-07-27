@@ -95,9 +95,12 @@
     line-height: 2;
 }
 
-.content > pre {
+.content pre {
     color: white;
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
+    white-space: pre-wrap;
 }
 
 .content pre > code {
@@ -172,11 +175,16 @@
 }
 
 .content > table {
+    table-layout: fixed;
     width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
     margin: 2rem 0;
 }
 
 .content > table th {
+    width: 100%;
+    max-width: 100%;
     color: white;
     background-color: var(--color-bg-dark);
     text-align: left;
@@ -184,6 +192,8 @@
 }
 
 .content > table td {
+    width: 100%;
+    max-width: 100%;
     color: white;
     background-color: var(--color-bg-dark);
     text-align: left;
@@ -234,5 +244,6 @@
 
     .content {
         width: 100%;
+        margin: 0 auto;
     }
 }
