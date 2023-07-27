@@ -8,7 +8,7 @@ import { pageview } from '@/libs/gtag'
 
 export default function GoogleAnalytics() {
   const pathname = usePathname()
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams() || ''
 
   useEffect(() => {
     const url = pathname + searchParams.toString()
