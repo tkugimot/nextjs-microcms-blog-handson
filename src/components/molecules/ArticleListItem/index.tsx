@@ -22,13 +22,18 @@ export default function ArticleListItem({ article }: Props) {
 
   return (
     <Box key={article.id}>
-      <HStack spacing="24px">
+      {/* Smartphone (Vertical) */}
+      <VStack
+        width={{ base: '100%', md: '50%' }}
+        alignItems="center"
+        display={{ base: 'flex', md: 'none' }}
+      >
         <Link href={`${locale}/articles/${article.id}`}>
           {article.thumbnail ? (
             <Image
               src={`${article.thumbnail.url}?fm=webp&w=414 1x`}
               alt="No Image"
-              width={250}
+              width={200}
               height={125}
               unoptimized={true}
               style={{ maxWidth: '200px' }}
@@ -40,6 +45,56 @@ export default function ArticleListItem({ article }: Props) {
               height={100}
               alt="No Image"
               unoptimized={true}
+              style={{ maxWidth: '200px' }}
+            />
+          )}
+        </Link>
+        <VStack align="left">
+          <Link href={'/' + locale + '/articles/' + article.id}>
+            <Heading
+              as="h2"
+              fontSize="2xl"
+              lineHeight={1.6}
+              marginTop="1"
+              flex={1}
+              cursor="pointer"
+            >
+              {locale === 'en' ? article.title_en : article.title_ja}
+            </Heading>
+          </Link>
+          <TagLinkList tags={article.tags} />
+          <PublishedDate
+            publishedAt={article.publishedAt}
+            revisedAt={article.revisedAt}
+          />
+        </VStack>
+      </VStack>
+
+      {/* PC (Horizontal) */}
+      <HStack
+        width={{ base: '50%', md: '100%' }}
+        spacing="24px"
+        alignItems="flex-start"
+        display={{ base: 'none', md: 'flex' }} // Hide on small screens, display on larger screens
+      >
+        <Link href={`${locale}/articles/${article.id}`}>
+          {article.thumbnail ? (
+            <Image
+              src={`${article.thumbnail.url}?fm=webp&w=414 1x`}
+              alt="No Image"
+              width={200}
+              height={125}
+              unoptimized={true}
+              style={{ maxWidth: '200px' }}
+            />
+          ) : (
+            <Image
+              src={'/no-image.png'}
+              width={200}
+              height={100}
+              alt="No Image"
+              unoptimized={true}
+              style={{ maxWidth: '200px' }}
             />
           )}
         </Link>
