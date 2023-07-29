@@ -36,8 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           ? `https://zubora-code.net/api/og?title=${data.title_en}`
           : `https://zubora-code.net/api/og?title=${data.title_ja}`,
      ],
-  },
-}
+  　},
   }
 }
 
