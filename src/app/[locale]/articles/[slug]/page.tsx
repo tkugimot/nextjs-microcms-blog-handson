@@ -26,6 +26,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           : `https://zubora-code.net/api/og?title=${data.title_ja}`,
       ],
     },
+  　twitter: {
+    　card: 'summary_large_image',
+    　title: params.locale === 'en' ? data.title_en : data.title_ja,
+    　description: params.locale === 'en' ? data.description_en : data.description_ja,
+    　creator: '@tkugimot',
+    　images: [
+       params.locale === 'en'
+          ? `https://zubora-code.net/api/og?title=${data.title_en}`
+          : `https://zubora-code.net/api/og?title=${data.title_ja}`,
+     ],
+  　},
   }
 }
 
