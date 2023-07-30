@@ -51,8 +51,14 @@
     margin-bottom: 64px;
 }
 
+.content_wrapper {
+    width: 100%;
+    max-width: 100%;
+}
+
 .content {
-    width: 720px;
+    width: 100%;
+    max-width: 100%;
 }
 
 .content *:first-child {

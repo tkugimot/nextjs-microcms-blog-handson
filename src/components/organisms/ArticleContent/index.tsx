@@ -53,7 +53,7 @@ export default function ArticleContent({ data }: Props) {
               />
             </picture>
           )}
-          <div>
+          <div className={styles.content_wrapper}>
             <SnsShareButtons article={data} />
             {locale === 'en'
               ? data.main_en.map((item) => (
