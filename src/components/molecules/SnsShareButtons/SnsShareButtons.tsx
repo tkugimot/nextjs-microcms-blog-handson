@@ -1,17 +1,17 @@
 import { HStack, Stack } from '@chakra-ui/react'
-import {
-  FacebookIcon,
-  FacebookShareButton,
-  HatenaIcon,
-  HatenaShareButton,
-  LineIcon,
-  LineShareButton,
-  TwitterIcon,
-  TwitterShareButton,
-} from 'react-share'
 import React from 'react'
 import { useLocale } from 'use-intl'
 import { Article } from '@/libs/microcms'
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  HatenaShareButton,
+  HatenaIcon,
+  LineShareButton,
+  LineIcon,
+} from 'next-share'
 
 type Props = {
   article: Article
