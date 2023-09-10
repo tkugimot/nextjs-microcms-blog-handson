@@ -1,9 +1,11 @@
 import { getServerSideSitemap, ISitemapField } from 'next-sitemap'
 import { Article, Blog, getList } from '@/libs/microcms'
 import { formatYYYYMMDD } from '@/libs/dateutil'
+import { NUM_OF_ALL_PAGES_LIMIST } from '@/constants'
 
 export async function GET(request: Request) {
   const data = await getList({
+    limit: NUM_OF_ALL_PAGES_LIMIST,
     fields: 'id,updatedAt',
   })
   const articles = data.contents
