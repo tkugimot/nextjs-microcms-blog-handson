@@ -9,8 +9,9 @@ import { getTagList } from '@/libs/microcms'
 import Navigation from '@/components/molecules/Navigation'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
-import { ReactNode, Suspense } from 'react'
-import GoogleAnalytics from '@/components/molecules/GoogleAnalytics'
+import { ReactNode } from 'react'
+import Head from 'next/head'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -50,10 +51,19 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <Head>
+        <Script
+          id="Absence-banner"
+          async
+          strategy="afterInteractive"
+          onError={(e) => {
+            console.error('Script failed to load', e)
+          }}
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}`}
+          crossOrigin="anonymous"
+        />
+      </Head>
       <body className={inter.className}>
-        <Suspense>
-          <GoogleAnalytics />
-        </Suspense>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>
             <CommonHeader />
