@@ -9,7 +9,8 @@ import { getTagList } from '@/libs/microcms'
 import Navigation from '@/components/molecules/Navigation'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
-import { ReactNode } from 'react'
+import { ReactNode, Suspense } from 'react'
+import GoogleAnalytics from '@/components/molecules/GoogleAnalytics'
 import Head from 'next/head'
 import Script from 'next/script'
 
@@ -64,6 +65,9 @@ export default async function LocaleLayout({
         />
       </Head>
       <body className={inter.className}>
+        <Suspense>
+          <GoogleAnalytics />
+        </Suspense>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>
             <CommonHeader />
