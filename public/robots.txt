@@ -7,3 +7,4 @@ Host: https://zubora-code.net
 
 # Sitemaps
 Sitemap: https://zubora-code.net/sitemap.xml
+Sitemap: https://zubora-code.net/server-sitemap.xml

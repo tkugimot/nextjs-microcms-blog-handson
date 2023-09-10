@@ -10,3 +10,9 @@ export const formatDate = (date?: string) => {
   }
   return 'unknown date'
 }
+
+export const formatYYYYMMDD = (date: string) => {
+  dayjs.extend(utc)
+  dayjs.extend(timezone)
+  return dayjs.utc(date).tz('Asia/Tokyo').format('YYYY-MM-DD')
+}
