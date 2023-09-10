@@ -1,5 +1,8 @@
 import { ReactNode } from 'react'
 
+// cache for 24 hours
+export const revalidate = 86400
+
 type Props = {
   children: ReactNode
 }
