@@ -28,7 +28,7 @@ export default function ArticleListItem({ article }: Props) {
         alignItems="center"
         display={{ base: 'flex', md: 'none' }}
       >
-        <Link href={`${locale}/articles/${article.id}`}>
+        <Link href={`/${locale}/articles/${article.id}`}>
           {article.thumbnail ? (
             <Image
               src={`${article.thumbnail.url}?fm=webp&w=414 1x`}
@@ -77,7 +77,7 @@ export default function ArticleListItem({ article }: Props) {
         alignItems="flex-start"
         display={{ base: 'none', md: 'flex' }} // Hide on small screens, display on larger screens
       >
-        <Link href={`${locale}/articles/${article.id}`}>
+        <Link href={`/${locale}/articles/${article.id}`}>
           {article.thumbnail ? (
             <Image
               src={`${article.thumbnail.url}?fm=webp&w=414 1x`}
