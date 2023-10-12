@@ -7,7 +7,8 @@
     "build": "rm -rf .next && next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "serve": "yarn serve ./out"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
@@ -45,6 +46,7 @@
     "eslint-config-prettier": "^8.8.0",
     "next-sitemap": "^4.2.2",
     "prettier": "^2.8.8",
-    "sass": "^1.63.6"
+    "sass": "^1.63.6",
+    "serve": "^14.2.1"
   }
 }
