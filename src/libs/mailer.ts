@@ -1,8 +1,6 @@
 import nodemailer from 'nodemailer'
 
 export async function sendMail(name: string, email: string, message: string) {
-  console.log(process.env.NODEMAILER_EMAIL)
-  console.log(process.env.NODEMAILER_PASSWORD)
   const transporter = nodemailer.createTransport({
     port: 500,
     debug: true,

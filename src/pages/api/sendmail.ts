@@ -8,8 +8,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       case 'POST': {
         const { name, email, message } = req.body
 
-        console.log(name, email, message)
-
         await sendMail(name, email, message)
         res.status(200).send('Success')
         break
