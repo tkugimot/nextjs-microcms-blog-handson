@@ -1,6 +1,16 @@
 {
   "Index": {
     "readMore": "Read more",
-    "profileSummary": "Specializing in backend and web frontend development for payment and media at work,\n the go-to languages for these tasks include Java and TypeScript.\n Additionally, currently exploring Flutter app development as a side project.\n"
+    "profileSummary": "Specializing in backend and web frontend development for payment and media at work,\n the go-to languages for these tasks include Java and TypeScript.\n Additionally, currently exploring Flutter app development as a side project.\n",
+    "required": "Required",
+    "emailValidation": "Please enter a valid email address",
+    "nameField": "Name",
+    "emailField": "Email",
+    "messageField": "Message",
+    "namePlaceHolder": "Your Name",
+    "emailPlaceHolder": "Your Email",
+    "messagePlaceHolder": "Your Message",
+    "sendMessage": "Send Message",
+    "failedMessage": "Unable to send successfully. Please wait and try again."
   }
 }

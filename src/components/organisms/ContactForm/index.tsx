@@ -15,7 +15,7 @@ import {
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useRouter } from 'next/navigation'
-import { useLocale } from 'use-intl'
+import { useLocale, useTranslations } from 'use-intl'
 import { BsPerson } from 'react-icons/bs'
 import { MdOutlineEmail } from 'react-icons/md'
 
@@ -25,18 +25,15 @@ type ContactForm = {
   message: string
 }
 
-// バリーデーションルール
-const schema = yup.object({
-  name: yup.string().required('必須項目です'),
-  email: yup
-    .string()
-    .required('必須項目です')
-    .email('正しいメールアドレス入力してください'),
-  message: yup.string().required('必須項目です'),
-})
-
 export default function ContactForm() {
+  const t = useTranslations('Index')
   const locale = useLocale()
+
+  const schema = yup.object({
+    name: yup.string().required(t('required')),
+    email: yup.string().required(t('required')).email(t('emailValidation')),
+    message: yup.string().required(t('required')),
+  })
 
   const {
     register,
@@ -49,8 +46,6 @@ export default function ContactForm() {
   const router = useRouter()
 
   const onSubmit: SubmitHandler<ContactForm> = async (data) => {
-    console.log('aaa')
-    console.log(data)
     const response = await fetch('/api/sendmail', {
       method: 'POST',
       headers: {
@@ -61,7 +56,7 @@ export default function ContactForm() {
     if (response.status === 200) {
       router.push(`/${locale}/thanks`)
     } else {
-      alert('正常に送信できませんでした')
+      alert(t('failedMessage'))
     }
   }
 
@@ -81,7 +76,7 @@ export default function ContactForm() {
       >
         <VStack spacing={5}>
           <FormControl isRequired isInvalid={!!errors.name}>
-            <FormLabel>Name</FormLabel>
+            <FormLabel>{t('nameField')}</FormLabel>
             <InputGroup>
               <InputLeftElement>
                 <BsPerson />
@@ -90,7 +85,7 @@ export default function ContactForm() {
                 type="text"
                 id={'name'}
                 {...register('name')}
-                placeholder="Your Name"
+                placeholder={t('namePlaceHolder')}
               />
             </InputGroup>
             <FormErrorMessage>
@@ -98,7 +93,7 @@ export default function ContactForm() {
             </FormErrorMessage>
           </FormControl>
           <FormControl isRequired isInvalid={!!errors.email}>
-            <FormLabel>Email</FormLabel>
+            <FormLabel>{t('emailField')}</FormLabel>
 
             <InputGroup>
               <InputLeftElement>
@@ -108,7 +103,7 @@ export default function ContactForm() {
                 type="email"
                 id={'email'}
                 {...register('email')}
-                placeholder="Your Email"
+                placeholder={t('emailPlaceHolder')}
               />
             </InputGroup>
             <FormErrorMessage>
@@ -117,10 +112,10 @@ export default function ContactForm() {
           </FormControl>
 
           <FormControl isRequired isInvalid={!!errors.message}>
-            <FormLabel>Message</FormLabel>
+            <FormLabel>{t('messageField')}</FormLabel>
             <Textarea
               id={'message'}
-              placeholder="Your Message"
+              placeholder={t('messagePlaceHolder')}
               rows={6}
               resize="none"
               {...register('message')}
@@ -141,7 +136,7 @@ export default function ContactForm() {
             isLoading={isSubmitting}
             onClick={handleSubmit(onSubmit)}
           >
-            Send Message
+            {t('sendMessage')}
           </Button>
         </VStack>
       </Box>
