@@ -1,6 +1,16 @@
 {
   "Index": {
     "readMore": "もっと読む",
-    "profileSummary": "仕事では決済やメディアのWebやスマホアプリのBE開発、WebのFE開発をやっています。\nJavaとTypeScriptをよく使います。プライベートではFlutterでのアプリ開発にも挑戦中です。"
+    "profileSummary": "仕事では決済やメディアのWebやスマホアプリのBE開発、WebのFE開発をやっています。\nJavaとTypeScriptをよく使います。プライベートではFlutterでのアプリ開発にも挑戦中です。",
+    "required": "必須項目です",
+    "emailValidation": "正しいメールアドレスを入力してください",
+    "nameField": "名前",
+    "emailField": "メールアドレス",
+    "messageField": "メッセージ",
+    "namePlaceHolder": "あなたのお名前",
+    "emailPlaceHolder": "あなたのメールアドレス",
+    "messagePlaceHolder": "あなたのメッセージ",
+    "sendMessage": "メッセージを送信",
+    "failedMessage": "正常に送信できませんでした。時間をあけてもう一度お試しください。"
   }
 }

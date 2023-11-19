@@ -24,7 +24,6 @@ export default function Navigation({ tags }: Props) {
         <HStack paddingX={4}>
           <TagLinkList tags={tags} />
         </HStack>
-        <Divider />
       </VStack>
     </Center>
   )
