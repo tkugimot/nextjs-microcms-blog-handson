@@ -6,9 +6,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const { method } = req
     switch (method) {
       case 'POST': {
-        const { title, body } = req.body
+        const { name, email, message } = req.body
 
-        await sendMail(title, process.env.NODEMAILER_EMAIL as string, body)
+        console.log(name, email, message)
+
+        await sendMail(name, email, message)
         res.status(200).send('Success')
         break
       }

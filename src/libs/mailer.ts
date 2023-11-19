@@ -1,10 +1,6 @@
 import nodemailer from 'nodemailer'
 
-export async function sendMail(
-  subject: string,
-  toEmail: string,
-  otpText: string
-) {
+export async function sendMail(name: string, email: string, message: string) {
   console.log(process.env.NODEMAILER_EMAIL)
   console.log(process.env.NODEMAILER_PASSWORD)
   const transporter = nodemailer.createTransport({
@@ -20,9 +16,14 @@ export async function sendMail(
 
   var mailOptions = {
     from: process.env.NODEMAILER_EMAIL,
-    to: toEmail,
-    subject: subject,
-    text: otpText,
+    to: process.env.NODEMAILER_EMAIL,
+    subject: 'Inquiry from zubora-code.net',
+    text: `Inquery from ${name}. message: ${message}. email: ${email}`,
+    html: `
+        <p>Name: ${name}</p>
+        <p>Email: ${email}</p>
+        <p>Message: ${message}</p>
+      `,
   }
 
   await new Promise((resolve, reject) => {
