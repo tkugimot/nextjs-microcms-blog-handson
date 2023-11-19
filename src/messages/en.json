@@ -11,6 +11,8 @@
     "emailPlaceHolder": "Your Email",
     "messagePlaceHolder": "Your Message",
     "sendMessage": "Send Message",
-    "failedMessage": "Unable to send successfully. Please wait and try again."
+    "failedMessage": "Unable to send successfully. Please wait and try again.",
+    "thanksTitle": "Thank You for Your Inquiry",
+    "thanksMessage": "I will get back to you as soon as I confirm the details of your inquiry."
   }
 }

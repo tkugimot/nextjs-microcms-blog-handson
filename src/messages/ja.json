@@ -11,6 +11,8 @@
     "emailPlaceHolder": "あなたのメールアドレス",
     "messagePlaceHolder": "あなたのメッセージ",
     "sendMessage": "メッセージを送信",
-    "failedMessage": "正常に送信できませんでした。時間をあけてもう一度お試しください。"
+    "failedMessage": "正常に送信できませんでした。時間をあけてもう一度お試しください。",
+    "thanksTitle": "お問い合わせありがとうございます",
+    "thanksMessage": "内容を確認でき次第返信いたします。"
   }
 }

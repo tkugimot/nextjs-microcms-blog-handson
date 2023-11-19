@@ -60,86 +60,79 @@ export default function ContactForm() {
     }
   }
 
-  const onHandle = () => {
-    // フォームで入力されたデータをコンソールに表示
-    console.log('aaa')
-  }
-
   return (
-    <form onSubmit={onHandle}>
-      <Box
-        bg={useColorModeValue('white', 'gray.700')}
-        borderRadius="lg"
-        p={8}
-        color={useColorModeValue('gray.700', 'whiteAlpha.900')}
-        shadow="base"
-      >
-        <VStack spacing={5}>
-          <FormControl isRequired isInvalid={!!errors.name}>
-            <FormLabel>{t('nameField')}</FormLabel>
-            <InputGroup>
-              <InputLeftElement>
-                <BsPerson />
-              </InputLeftElement>
-              <Input
-                type="text"
-                id={'name'}
-                {...register('name')}
-                placeholder={t('namePlaceHolder')}
-              />
-            </InputGroup>
-            <FormErrorMessage>
-              {errors['name'] && errors['name']?.message}
-            </FormErrorMessage>
-          </FormControl>
-          <FormControl isRequired isInvalid={!!errors.email}>
-            <FormLabel>{t('emailField')}</FormLabel>
-
-            <InputGroup>
-              <InputLeftElement>
-                <MdOutlineEmail />
-              </InputLeftElement>
-              <Input
-                type="email"
-                id={'email'}
-                {...register('email')}
-                placeholder={t('emailPlaceHolder')}
-              />
-            </InputGroup>
-            <FormErrorMessage>
-              {errors['email'] && errors['email']?.message}
-            </FormErrorMessage>
-          </FormControl>
-
-          <FormControl isRequired isInvalid={!!errors.message}>
-            <FormLabel>{t('messageField')}</FormLabel>
-            <Textarea
-              id={'message'}
-              placeholder={t('messagePlaceHolder')}
-              rows={6}
-              resize="none"
-              {...register('message')}
+    <Box
+      bg={useColorModeValue('white', 'gray.700')}
+      borderRadius="lg"
+      p={8}
+      color={useColorModeValue('gray.700', 'whiteAlpha.900')}
+      shadow="base"
+    >
+      <VStack spacing={5}>
+        <FormControl isRequired isInvalid={!!errors.name}>
+          <FormLabel>{t('nameField')}</FormLabel>
+          <InputGroup>
+            <InputLeftElement>
+              <BsPerson />
+            </InputLeftElement>
+            <Input
+              type="text"
+              id={'name'}
+              {...register('name')}
+              placeholder={t('namePlaceHolder')}
             />
-            <FormErrorMessage>
-              {errors['message'] && errors['message']?.message}
-            </FormErrorMessage>
-          </FormControl>
+          </InputGroup>
+          <FormErrorMessage>
+            {errors['name'] && errors['name']?.message}
+          </FormErrorMessage>
+        </FormControl>
+        <FormControl isRequired isInvalid={!!errors.email}>
+          <FormLabel>{t('emailField')}</FormLabel>
 
-          <Button
-            colorScheme="blue"
-            bg="blue.400"
-            color="white"
-            _hover={{
-              bg: 'blue.500',
-            }}
-            width="full"
-            isLoading={isSubmitting}
-            onClick={handleSubmit(onSubmit)}
-          >
-            {t('sendMessage')}
-          </Button>
-        </VStack>
-      </Box>
-    </form>
+          <InputGroup>
+            <InputLeftElement>
+              <MdOutlineEmail />
+            </InputLeftElement>
+            <Input
+              type="email"
+              id={'email'}
+              {...register('email')}
+              placeholder={t('emailPlaceHolder')}
+            />
+          </InputGroup>
+          <FormErrorMessage>
+            {errors['email'] && errors['email']?.message}
+          </FormErrorMessage>
+        </FormControl>
+
+        <FormControl isRequired isInvalid={!!errors.message}>
+          <FormLabel>{t('messageField')}</FormLabel>
+          <Textarea
+            id={'message'}
+            placeholder={t('messagePlaceHolder')}
+            rows={6}
+            resize="none"
+            {...register('message')}
+          />
+          <FormErrorMessage>
+            {errors['message'] && errors['message']?.message}
+          </FormErrorMessage>
+        </FormControl>
+
+        <Button
+          colorScheme="blue"
+          bg="blue.400"
+          color="white"
+          _hover={{
+            bg: 'blue.500',
+          }}
+          width="full"
+          isLoading={isSubmitting}
+          onClick={handleSubmit(onSubmit)}
+        >
+          {t('sendMessage')}
+        </Button>
+      </VStack>
+    </Box>
   )
 }
