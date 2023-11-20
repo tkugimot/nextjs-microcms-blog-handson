@@ -11,7 +11,7 @@ import {
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { EmailIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { TbLanguageHiragana } from 'react-icons/tb'
 import { useRouter } from 'next-intl/client'
 import { usePathname } from 'next-intl/client'
@@ -48,7 +48,17 @@ export default function CommonHeader() {
               Zubora Code
             </Heading>
           </Link>
-          <HStack spacing="12px">
+          <HStack spacing="1px">
+            <Button
+              as="a"
+              href={`/${locale}/contact`}
+              color={useColorModeValue('black', 'white')}
+              colorScheme="blue.100"
+              px={'0'}
+              size="lg"
+            >
+              <EmailIcon />
+            </Button>
             <Button
               color={useColorModeValue('black', 'white')}
               colorScheme="blue.100"
